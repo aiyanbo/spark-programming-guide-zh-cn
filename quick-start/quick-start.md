@@ -47,7 +47,7 @@ res3: Long = 15
 
 ## 更多 RDD 操作
 
-RDD actions 和 transformations 能被用在更多的复杂计算中。比方说，我们想要找到单词最多的一行：
+RDD actions 和 transformations 能被用在更多的复杂计算中。比方说，我们想要找到一行中最多的单词数量：
 
 ```scala
 scala> textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a else b)
