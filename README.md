@@ -1,9 +1,8 @@
 Spark 编程指南简体中文版
 =============================
 
-## Table of Content
-
-* [快速开始](quick-start/quick-start.md)
+* [快速开始](quick-start/README.md)
+  * [使用 Spark Shell](quick-start/using-spark-shell.md)
 
 ## Copyright
 
