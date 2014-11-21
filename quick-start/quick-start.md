@@ -31,7 +31,7 @@ scala> textFile.first() // RDD 的第一行数据
 res1: String = # Apache Spark
 ```
 
-现在让我们使用一个 transformation，我们将使用 [filter]() 在这个文件里返回一个包含子数据集的新 RDD。
+现在让我们使用一个 transformation，我们将使用 [filter](https://spark.apache.org/docs/latest/programming-guide.html#transformations) 在这个文件里返回一个包含子数据集的新 RDD。
 
 ```scala
 scala> val linesWithSpark = textFile.filter(line => line.contains("Spark"))
@@ -64,7 +64,7 @@ scala> textFile.map(line => line.split(" ").size).reduce((a, b) => Math.max(a, b
 res5: Int = 15
 ```
 
-Hadoop 推广的一个公用的数据流模式是 MapReduce。Spark 能很容易地实现 MapReduce：
+Hadoop 流行的一个通用的数据流模式是 MapReduce。Spark 能很容易地实现 MapReduce：
 
 ```scala
 scala> val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
