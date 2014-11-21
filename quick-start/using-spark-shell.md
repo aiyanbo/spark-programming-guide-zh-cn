@@ -1,9 +1,3 @@
-# 快速开始
-
-本节课程提供一个使用 Spark 的快速介绍，首先我们使用 Spark 的交互式 shell(用 Python 或 Scala) 介绍它的 API。当演示如何在 Java, Scala 和 Python 写独立的程序时，看[编码指南](https://spark.apache.org/docs/latest/programming-guide.html)里完整的参考。
-
-依照这个指南，首先从 [Spark 网站](https://spark.apache.org/downloads.html)下载一个 Spark 发行包。因为我们不会使用 HDFS，你可以下载任何 Hadoop 版本的包。
-
 # 使用 Spark Shell
 
 ## 基础
@@ -70,3 +64,27 @@ Hadoop 流行的一个通用的数据流模式是 MapReduce。Spark 能很容易
 scala> val wordCounts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
 wordCounts: spark.RDD[(String, Int)] = spark.ShuffledAggregatedRDD@71f027b8
 ```
+
+这里，我们结合 [flatMap](), [map]() 和 [reduceByKey]() 来计算文件里每个单词出现的数量，它的结果是包含一组(String, Int) 键值对的 RDD。我们可以使用 [collect] 操作在我们的 shell 中收集单词的数量：
+
+```scala
+scala> wordCounts.collect()
+res6: Array[(String, Int)] = Array((means,1), (under,2), (this,3), (Because,1), (Python,2), (agree,1), (cluster.,1), ...)
+```
+
+## 缓存
+
+Spark 支持把数据集拉到集群内的内存缓存中。当要重复访问时这是非常有用的，例如当我们在一个小的热(hot)数据集中查询，或者运行一个像网页搜索排序这样的重复算法。作为一个简单的例子，让我们把 `linesWithSpark` 数据集标记在缓存中：
+
+```scala
+scala> linesWithSpark.cache()
+res7: spark.RDD[String] = spark.FilteredRDD@17e51082
+
+scala> linesWithSpark.count()
+res8: Long = 15
+
+scala> linesWithSpark.count()
+res9: Long = 15
+```
+
+缓存 100 行的文本文件来研究 Spark 这看起来很傻。真正让人感兴趣的部分是我们可以在非常大型的数据集中使用同样的函数，甚至在 10 个或者 100 个节点中交叉计算。你同样可以使用 `bin/spark-shell` 连接到一个 cluster 来替换掉[编程指南](https://spark.apache.org/docs/latest/programming-guide.html#initializing-spark)中的方法进行交互操作。
