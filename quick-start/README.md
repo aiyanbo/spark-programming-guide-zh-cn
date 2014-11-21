@@ -5,6 +5,6 @@
 依照这个指南，首先从 [Spark 网站](https://spark.apache.org/downloads.html)下载一个 Spark 发行包。因为我们不会使用 HDFS，你可以下载任何 Hadoop 版本的包。
 
 
-* [使用 Spark Shell](using-spark-shell.md)
-* [独立应用]()
-* [开始吧!]()
+* [Spark Shell](using-spark-shell.md)
+* [独立应用程序]()
+* [开始翻滚吧!]()
