@@ -7,7 +7,7 @@ Spark 编程指南简体中文版
 
 ## Copyright
 
-本文翻译自[Spark 官方文档]()
+本文翻译自[Spark 官方文档](https://spark.apache.org/docs/latest/)
 
 ## License
 
