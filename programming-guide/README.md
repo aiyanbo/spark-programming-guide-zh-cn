@@ -5,3 +5,5 @@
 Spark 的第二个抽象是*共享变量(shared variables)*，共享变量能被运行在并行计算中。默认情况下，当 Spark 运行一个并行函数时，这个并行函数会作为一个任务集在不同的节点上运行，它会把函数里使用的每个变量都复制搬运到每个任务中。有时，一个变量需要被共享到交叉任务中或驱动程序和任务之间。Spark 支持 2 种类型的共享变量：*广播变量(broadcast variables)*，用来在所有节点的内存中缓存一个值；累加器(accumulators)，仅仅只能执行“添加(added)”操作，例如：记数器(counters)和求和(sums)。
 
 这个指南会在 Spark 支持的所有语言中演示它的每一个特征。非常简单地开始一个 Spark 交互式 shell - `bin/spark-shell` 开始一个 Scala shell，或 `bin/pyspark` 开始一个 Python shell。
+
+* [衔接 Spark](linking-with-spark.md)
