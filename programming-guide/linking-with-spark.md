@@ -18,7 +18,7 @@ artifactId = hadoop-client
 version = <your-hdfs-version>
 ```
 
-最后，你需要导入一些 Spark 的类和隐式转换到你的程序，添加下面的行：
+最后，你需要导入一些 Spark 的类和隐式转换到你的程序，添加下面的行就可以了：
 
 ```scala
 import org.apache.spark.SparkContext
