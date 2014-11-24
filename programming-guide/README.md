@@ -6,4 +6,4 @@ Spark 的第二个抽象是*共享变量(shared variables)*，共享变量能被
 
 这个指南会在 Spark 支持的所有语言中演示它的每一个特征。非常简单地开始一个 Spark 交互式 shell - `bin/spark-shell` 开始一个 Scala shell，或 `bin/pyspark` 开始一个 Python shell。
 
-* [衔接 Spark](linking-with-spark.md)
+* [引入 Spark](linking-with-spark.md)
