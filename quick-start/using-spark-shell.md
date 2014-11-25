@@ -8,7 +8,7 @@ Spark 的 shell 作为一个强大的交互式数据分析工具，提供了一�
 ./bin/spark-shell
 ```
 
-Spark 最主要的抽象是叫Resilient Distributed Dataset(RDD) 的分布式集合。RDDs 可以使用 Hadoop InputFormats(例如 HDFS 文件)创建，也可以从其他的 RDDs 转换。让我们在 Spark 源代码目录从 README 文本文件中创建一个新的 RDD。
+Spark 最主要的抽象是叫Resilient Distributed Dataset(RDD) 的弹性分布式集合。RDDs 可以使用 Hadoop InputFormats(例如 HDFS 文件)创建，也可以从其他的 RDDs 转换。让我们在 Spark 源代码目录从 README 文本文件中创建一个新的 RDD。
 
 ```scala
 scala> val textFile = sc.textFile("README.md")
