@@ -8,3 +8,4 @@
 * [编程指南](programming-guide/README.md)
   * [引入 Spark](programming-guide/linking-with-spark.md)
   * [初始化 Spark](programming-guide/initializing-spark.md)
+  * [Spark RDDs](programming-guide/rdds.md)
