@@ -8,4 +8,6 @@
 * [编程指南](programming-guide/README.md)
   * [引入 Spark](programming-guide/linking-with-spark.md)
   * [初始化 Spark](programming-guide/initializing-spark.md)
-  * [Spark RDDs](programming-guide/rdds.md)
+  * [Spark RDDs](programming-guide/rdds/README.md)
+    * [并行集合](programming-guide/rdds/parallelized-collections.md)
+	* [外部数据集](programming-guide/rdds/external-datasets.md)
