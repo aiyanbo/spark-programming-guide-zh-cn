@@ -4,7 +4,7 @@
 
 在 Scala 中，这些操作在包含[二元组(Tuple2)](http://www.scala-lang.org/api/2.10.4/index.html#scala.Tuple2)(在语言的内建元组中，通过简单的写 (a, b)) 的 RDD 上自动地变成可用的，只要在你的程序中导入 `org.apache.spark.SparkContext._` 来启用 Spark 的隐式转换。在 PairRDDFunctions 的类里键值对操作是可以使用的，如果你导入隐式转换它会自动地包装成元组 RDD。
 
-例如，下面的代码在键值对上使用 `reduceByKey` 操作来统计有多少行文本出现在一个文件里：
+例如，下面的代码在键值对上使用 `reduceByKey` 操作来统计在一个文件里每一行文本内容出现的次数：
 
 ```scala
 val lines = sc.textFile("data.txt")
