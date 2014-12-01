@@ -6,3 +6,4 @@ Spark 围绕的概念是 _Resilient Distributed Dataset (RDD)_：一个可并行
 * [外部数据集](external-datasets.md)
 * [RDD 操作](rdd-operations.md)
 * [传递函数到 Spark](passing-functions-to-spark.md)
+* [使用键值对](working-with-key-value-pairs.md)
