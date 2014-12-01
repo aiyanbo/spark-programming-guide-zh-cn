@@ -15,3 +15,4 @@
     * [传递函数到 Spark](programming-guide/rdds/passing-functions-to-spark.md)
     * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
     * [Transformations](programming-guide/rdds/transformations.md)
+    * [Transformations](programming-guide/rdds/transformations.md)
