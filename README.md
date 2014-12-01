@@ -14,7 +14,7 @@ Spark 编程指南简体中文版
     * [外部数据集](programming-guide/rdds/external-datasets.md)
     * [RDD 操作](programming-guide/rdds/rdd-operations.md) 
     * [传递函数到 Spark](programming-guide/rdds/passing-functions-to-spark.md)
-    * [使用键值对](working-with-key-value-pairs.md)
+    * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
 
 ## Copyright
 
