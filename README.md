@@ -13,10 +13,10 @@ Spark 编程指南简体中文版
     * [并行集合](programming-guide/rdds/parallelized-collections.md)
     * [外部数据集](programming-guide/rdds/external-datasets.md)
     * [RDD 操作](programming-guide/rdds/rdd-operations.md) 
-    * [传递函数到 Spark](programming-guide/rdds/passing-functions-to-spark.md)
-    * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
-    * [Transformations](programming-guide/rdds/transformations.md)
-    * [Actions](programming-guide/rdds/actions.md)
+      * [传递函数到 Spark](programming-guide/rdds/passing-functions-to-spark.md)
+      * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
+      * [Transformations](programming-guide/rdds/transformations.md)
+      * [Actions](programming-guide/rdds/actions.md)
 
 ## Copyright
 
