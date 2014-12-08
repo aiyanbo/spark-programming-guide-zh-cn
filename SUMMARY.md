@@ -16,3 +16,4 @@
       * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
       * [Transformations](programming-guide/rdds/transformations.md)
       * [Actions](programming-guide/rdds/actions.md)
+    * [RDD 持久化](programming-guide/rdds/rdd_persistence.md)
