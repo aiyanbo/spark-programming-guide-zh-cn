@@ -7,7 +7,7 @@ Spark最重要的一个功能是它可以通过各种操作（operations）持�
 可以通过原有的转换（transformations）操作自动的重复计算并且创建出这个分区。
 
 此外，我们可以利用不同的存储级别存储每一个被持久化的RDD。例如，它允许我们持久化集合到磁盘上、将集合作为序列化的Java对象持久化到内存中、在节点间复制集合或者存储集合到
-[Tachyon](http://tachyon-project.org/)中。我们可以通过传递一个`StorageLevel`对象给`persist()`方法设置这些存储级别。`cache()`方法使用了默认的存储级别—`StorageLevel.MEMORY_ONLY`。完整的存储级别如下所示：
+[Tachyon](http://tachyon-project.org/)中。我们可以通过传递一个`StorageLevel`对象给`persist()`方法设置这些存储级别。`cache()`方法使用了默认的存储级别—`StorageLevel.MEMORY_ONLY`。完整的存储级别介绍如下所示：
 
 Storage Level | Meaning
 --- | ---
@@ -17,8 +17,7 @@ MEMORY_ONLY_SER | 将RDD作为序列化的Java对象存储（每个分区一个b
 MEMORY_AND_DISK_SER | 和MEMORY_ONLY_SER类似，但不是在每次需要时重复计算这些不适合存储到内存中的分区，而是将这些分区存储到磁盘中。
 DISK_ONLY | 仅仅将RDD分区存储到磁盘中
 MEMORY_ONLY_2, MEMORY_AND_DISK_2, etc. | 和上面的存储级别类似，但是复制每个分区到集群的两个节点上面
-OFF_HEAP (experimental) | 以序列化的格式存储RDD到[Tachyon](http://tachyon-project.org/)中。相对于MEMORY_ONLY_SER，OFF_HEAP减少了垃圾回收的花费，允许更小的执行者共享
-内存池。这使其在拥有大量内存的环境下或者多并发应用程序的环境中具有更强的吸引力。
+OFF_HEAP (experimental) | 以序列化的格式存储RDD到[Tachyon](http://tachyon-project.org/)中。相对于MEMORY_ONLY_SER，OFF_HEAP减少了垃圾回收的花费，允许更小的执行者共享内存池。这使其在拥有大量内存的环境下或者多并发应用程序的环境中具有更强的吸引力。
 
 NOTE:在python中，存储的对象都是通过Pickle库序列化了的，所以是否选择序列化等级并不重要。
 
