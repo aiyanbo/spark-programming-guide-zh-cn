@@ -19,3 +19,4 @@
     * [RDD持久化](programming-guide/rdds/rdd-persistences.md)
   * [共享变量](programming-guide/shared-variables.md)
   * [从这里开始](programming-guide/from-here.md)
+* [Spark Streaming](spark-streaming/README.md)
