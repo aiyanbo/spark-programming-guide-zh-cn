@@ -17,5 +17,5 @@
       * [Transformations](programming-guide/rdds/transformations.md)
       * [Actions](programming-guide/rdds/actions.md)
     * [RDD持久化](programming-guide/rdds/rdd-persistences.md)
-    * [共享变量](programming-guide/rdds/shared-variables.md)
-    * [从这里开始](programming-guide/rdds/from-here.md)
+  * [共享变量](programming-guide/shared-variables.md)
+  * [从这里开始](programming-guide/from-here.md)

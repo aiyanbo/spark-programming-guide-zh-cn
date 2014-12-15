@@ -10,5 +10,3 @@ Spark 核心的概念是 _Resilient Distributed Dataset (RDD)_：一个可并行
 * [Transformations](transformations.md)
 * [Actions](actions.md)
 * [RDD持久化](rdd-persistences.md)
-* [共享变量](shared-variables.md)
-* [从这里开始](from-here.md)
