@@ -14,3 +14,5 @@ Spark Streaming支持一个高层的抽象，叫做离散流(`discretized stream
 在其他DStream的基础上通过高阶函数获得。在内部，DStream是由一系列RDDs组成。
 
 本指南指导用户开始利用DStream编写Spark Streaming程序。用户能够利用scala或者是java来编写Spark Streaming程序。
+
+* [一个快速的例子](a-quick-example.md)

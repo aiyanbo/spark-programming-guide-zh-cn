@@ -20,3 +20,4 @@
   * [共享变量](programming-guide/shared-variables.md)
   * [从这里开始](programming-guide/from-here.md)
 * [Spark Streaming](spark-streaming/README.md)
+  * [一个快速的例子](spark-streaming/a-quick-example.md)
