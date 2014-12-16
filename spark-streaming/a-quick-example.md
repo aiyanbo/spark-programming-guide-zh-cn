@@ -3,7 +3,7 @@
 在我们进入如何编写Spark Streaming程序的细节之前，让我们快速地浏览一个简单的例子。这个例子从监听TCP套接字的数据服务器获取文本数据，然后计算文本中包含的单词数。做法如下：
 
 首先，我们导入Spark Streaming的相关类以及一些从StreamingContext获得的隐式转换到我们的环境中，为我们所需的其他类（如DStream）提供有用的方法。[StreamingContext](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.streaming.StreamingContext)
-是所有流函数的主要入口。我们创建了一个具有两个执行线程以及1秒批间隔时间(即将每秒的数据分为一批)的本地StreamingContext。
+是所有流函数的主要入口。然后，我们创建了一个具有两个执行线程以及1秒批间隔时间(即以秒为单位分割数据流)的本地StreamingContext。
 
 ```scala
 import org.apache.spark._
