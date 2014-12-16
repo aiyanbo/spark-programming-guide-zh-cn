@@ -24,6 +24,7 @@ Spark 编程指南简体中文版
   * [一个快速的例子](spark-streaming/a-quick-example.md)
   * [基本概念](spark-streaming/basic-concepts/README.md)
     * [链接](spark-streaming/basic-concepts/linking.md)
+    * [初始化StreamingContext](spark-streaming/basic-concepts/initializing-StreamingContext.md)
 
 ## Copyright
 
