@@ -22,6 +22,8 @@ Spark 编程指南简体中文版
   * [从这里开始](programming-guide/from-here.md)
 * [Spark Streaming](spark-streaming/README.md)
   * [一个快速的例子](spark-streaming/a-quick-example.md)
+  * [基本概念](spark-streaming/basic-concepts/README.md)
+    * [链接](spark-streaming/basic-concepts/linking)
 
 ## Copyright
 
