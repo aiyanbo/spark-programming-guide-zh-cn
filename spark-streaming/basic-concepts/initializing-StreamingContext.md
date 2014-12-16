@@ -15,7 +15,7 @@ val ssc = new StreamingContext(conf, Seconds(1))
 `master`的值。对于本地测试或者单元测试，你可以传递“local”字符串在同一个进程内运行Spark Streaming。需要注意的是，它在内部创建了一个SparkContext对象，你可以通过` ssc.sparkContext`
 访问这个SparkContext对象。
 
-批间隔时间需要根据你的程序的潜在需求以及集群的可用资源来设定，你可以在[性能调优](../performance-tuning/README.md)那一节获取详细的信息。
+批时间片需要根据你的程序的潜在需求以及集群的可用资源来设定，你可以在[性能调优](../performance-tuning/README.md)那一节获取详细的信息。
 
 可以利用已经存在的`SparkContext`对象创建`StreamingContext`对象。
 
@@ -26,12 +26,14 @@ val ssc = new StreamingContext(sc, Seconds(1))
 ```
 
 当一个上下文（context）定义之后，你必须按照以下几步进行操作
+
 - 1 定义输入源；
 - 2 准备好流计算指令；
 - 3 利用`streamingContext.start()`方法接收和处理数据；
 - 4 处理过程将一直持续，直到`streamingContext.stop()`方法被调用。
 
-有几点需要注意的地方：
+几点需要注意的地方：
+
 - 一旦一个context已经启动，就不能有新的流算子建立或者是添加到context中。
 - 一旦一个context已经停止，它就不能再重新启动
 - 在JVM中，同一时间只能有一个StreamingContext处于活跃状态
