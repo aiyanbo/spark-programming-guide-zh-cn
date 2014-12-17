@@ -83,7 +83,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 - 配置文件：通过下面的配置文件配置flume agent用于发送数据到Avro sink。
 
 ```
-agent.sinks = spark
+ agent.sinks = spark
  agent.sinks.spark.type = org.apache.spark.streaming.flume.sink.SparkSink
  agent.sinks.spark.hostname = <hostname of the local machine>
  agent.sinks.spark.port = <port to listen on for connection from Spark>
