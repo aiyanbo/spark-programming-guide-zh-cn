@@ -21,8 +21,9 @@
 
 有两点需要注意的地方：
 
-    - kafka的topic分区(partition)和由Spark Streaming生成的RDD分区不相关。所以在`KafkaUtils.createStream()`方法中，增加特定topic的分区数只能够增加单个`receiver`消费这个
+  1. kafka的topic分区(partition)和由Spark Streaming生成的RDD分区不相关。所以在`KafkaUtils.createStream()`方法中，增加特定topic的分区数只能够增加单个`receiver`消费这个
     topic的线程数，不能增加Spark处理数据的并发数。
-    - 通过不同的group和topic，可以创建多个输入DStream，从而利用多个`receiver`并发的接收数据。
+
+  2. 通过不同的group和topic，可以创建多个输入DStream，从而利用多个`receiver`并发的接收数据。
 
 - 部署：将`spark-streaming-kafka_2.10`和它的依赖（除了`spark-core_2.10`和`spark-streaming_2.10`）打包到应用程序的jar包中。然后用`spark-submit`方法启动你的应用程序。
