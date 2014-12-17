@@ -20,3 +20,4 @@ Spark Streaming支持一个高层的抽象，叫做离散流(`discretized stream
   * [链接](basic-concepts/linking.md)
   * [初始化StreamingContext](basic-concepts/initializing-StreamingContext.md)
   * [离散流](basic-concepts/discretized-streams.md)
+  * [输入DStreams](basic-concepts/input-DStreams.md)
