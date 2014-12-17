@@ -33,13 +33,13 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 
 ### 配置Spark Streaming应用程序
 
-1. 链接：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
+- 链接：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
 ```
  groupId = org.apache.spark
  artifactId = spark-streaming-flume_2.10
  version = 1.1.1
 ```
-2. 编程：在应用程序代码中，引入`FlumeUtils`创建输入DStream。
+- 编程：在应用程序代码中，引入`FlumeUtils`创建输入DStream。
 ```
  import org.apache.spark.streaming.flume._
  val flumeStream = FlumeUtils.createStream(streamingContext, [chosen machine's hostname], [chosen port])
@@ -48,7 +48,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 
 注意，hostname必须和集群(Mesos,YARN或者Spark Standalone)的resource manager所使用的机器的hostname是同一个，这样就可以根据名称分配资源，在正确的机器上启动`receiver`。
 
-3. 部署：将`spark-streaming-flume_2.10`和它的依赖（除了`spark-core_2.10`和`spark-streaming_2.10`）打包到应用程序jar包中。然后用`spark-submit`方法启动你的应用程序。
+- 部署：将`spark-streaming-flume_2.10`和它的依赖（除了`spark-core_2.10`和`spark-streaming_2.10`）打包到应用程序jar包中。然后用`spark-submit`方法启动你的应用程序。
 
 
 ## 方法2：利用自定义sink的基于拉的方法
@@ -67,7 +67,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 
 在选定的机器上面配置flume需要以下两个步骤。
 
-1. Sink Jars：添加下面的jar文件到flume的classpath目录下面
+- Sink Jars：添加下面的jar文件到flume的classpath目录下面
     - 自定义sink jar：通过下面的方式下载jar（或者[这里](http://search.maven.org/remotecontent?filepath=org/apache/spark/spark-streaming-flume-sink_2.10/1.1.1/spark-streaming-flume-sink_2.10-1.1.1.jar)）
     ```
      groupId = org.apache.spark
@@ -80,7 +80,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
      artifactId = scala-library
      version = 2.10.4
     ```
-2. 配置文件：通过下面的配置文件配置flume agent用于发送数据到Avro sink。
+- 配置文件：通过下面的配置文件配置flume agent用于发送数据到Avro sink。
 
 ```
 agent.sinks = spark
@@ -93,17 +93,19 @@ agent.sinks = spark
 
 ### 配置Spark Streaming应用程序
 
-1. 链接：在你的SBT或者Maven项目定义中，引入`spark-streaming-flume_2.10`组件
-2. 编程：在应用程序代码中，引入`FlumeUtils`创建输入DStream。
+- 链接：在你的SBT或者Maven项目定义中，引入`spark-streaming-flume_2.10`组件
+- 编程：在应用程序代码中，引入`FlumeUtils`创建输入DStream。
+
 ```
  import org.apache.spark.streaming.flume._
  val flumeStream = FlumeUtils.createPollingStream(streamingContext, [sink machine hostname], [sink port])
 ```
+
 可以查看用例[FlumePollingEventCount](https://github.com/apache/spark/tree/master/examples/src/main/scala/org/apache/spark/examples/streaming/FlumePollingEventCount.scala)
 
 注意，每个输入DStream都可以配置为从多个sink接收数据。
 
-3. 部署：将`spark-streaming-flume_2.10`和它的依赖（除了`spark-core_2.10`和`spark-streaming_2.10`）打包到应用程序的jar包中。然后用`spark-submit`方法启动你的应用程序。
+- 部署：将`spark-streaming-flume_2.10`和它的依赖（除了`spark-core_2.10`和`spark-streaming_2.10`）打包到应用程序的jar包中。然后用`spark-submit`方法启动你的应用程序。
 
 
 
