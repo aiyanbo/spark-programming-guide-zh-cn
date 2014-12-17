@@ -39,3 +39,31 @@ Spark Streaming将会监控`dataDirectory`目录，并且处理目录下生成�
 
 关于从套接字、文件和actor中获取流的更多细节，请看[StreamingContext](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.streaming.StreamingContext)和
 [JavaStreamingContext](https://spark.apache.org/docs/latest/api/java/index.html?org/apache/spark/streaming/api/java/JavaStreamingContext.html)
+
+## 高级源
+
+这类源需要非Spark库接口，并且它们中的部分还需要复杂的依赖（例如kafka和flume）。为了减少依赖的版本冲突问题，从这些源创建DStream的功能已经被移到了独立的库中，你能在[链接](linking.md)查看
+细节。例如，如果你想用来自推特的流数据创建DStream，你需要按照如下步骤操作：
+
+- 链接：添加`spark-streaming-twitter_2.10`到SBT或maven项目的依赖中
+- 编写：导入`TwitterUtils`类，用`TwitterUtils.createStream`方法创建DStream,如下所示
+```scala
+import org.apache.spark.streaming.twitter._
+TwitterUtils.createStream(ssc)
+```
+- 部署：将编写的程序以及其所有的依赖（包括spark-streaming-twitter_2.10的依赖以及它的传递依赖）打为jar包，然后部署。这在[部署章节](deploying-applications.md)将会作更进一步的介绍。
+
+需要注意的是，这些高级的源在`spark-shell`中不能被使用，因此基于这些源的应用程序无法在shell中测试。
+
+下面将介绍部分的高级源：
+
+- Twitter：Spark Streaming利用`Twitter4j 3.0.3`获取公共的推文流，这些推文通过[推特流API](https://dev.twitter.com/docs/streaming-apis)获得。认证信息可以通过Twitter4J库支持的
+任何[方法](http://twitter4j.org/en/configuration.html)提供。你既能够得到公共流，也能够得到基于关键字过滤后的流。你可以查看API文档（[scala](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.streaming.twitter.TwitterUtils$)和[java](https://spark.apache.org/docs/latest/api/java/index.html?org/apache/spark/streaming/twitter/TwitterUtils.html)）
+和例子（[TwitterPopularTags](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/streaming/TwitterPopularTags.scala)和[TwitterAlgebirdCMS](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/streaming/TwitterAlgebirdCMS.scala)）
+- Flume：Spark Streaming 1.1.1能够从flume 1.4.0中获取数据，可以查看[flume集成指南](flume-integration-guide.md)了解详细信息
+- Kafka：Spark Streaming 1.1.1能够从kafka 0.8.0中获取数据，可以查看[kafka集成指南](kafka-integration-guide.md)了解详细信息
+- Kinesis：查看[Kinesis集成指南](kinesis-integration.md)了解详细信息
+
+## 自定义源
+
+输入DStream也可以通过自定义源创建，你需要做的是实现用户自定义的`receiver`，这个`receiver`可以从自定义源接收数据以及将数据推到Spark中。通过[自定义receiver指南](custom-receiver.md)了解详细信息
