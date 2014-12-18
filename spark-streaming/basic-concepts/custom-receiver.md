@@ -1,7 +1,7 @@
 # 自定义receiver指南
 
 Spark Streaming可以从包括内置数据源在内的任意数据源获取数据（其他数据源包括flume，kafka，kinesis，文件，套接字等等）。这需要开发者去实现一个定制`receiver`从具体的数据源接收
-数据。这个指南介绍了实现自定义`receiver`的过程，以及怎样将`receiver`用到Spark Streaming应用程序中。
+数据。本指南介绍了实现自定义`receiver`的过程，以及怎样将`receiver`用到Spark Streaming应用程序中。
 
 ## 实现一个自定义的Receiver
 
