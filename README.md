@@ -27,7 +27,7 @@ Spark 编程指南简体中文版
     * [初始化StreamingContext](spark-streaming/basic-concepts/initializing-StreamingContext.md)
     * [离散流](spark-streaming/basic-concepts/discretized-streams.md)
     * [输入DStreams](spark-streaming/basic-concepts/input-DStreams.md)
-    * [DStream中的转换](spark-streaming/basic-concepts/transformation-on-DStreams.md)
+    * [DStream中的转换](spark-streaming/basic-concepts/transformations-on-DStreams.md)
 
 ## Copyright
 
