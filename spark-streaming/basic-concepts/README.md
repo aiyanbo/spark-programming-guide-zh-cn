@@ -6,3 +6,4 @@
 * [初始化StreamingContext](initializing-StreamingContext.md)
 * [离散流](discretized-streams.md)
 * [输入DStreams](input-DStreams.md)
+* [DStream中的转换](transformation-on-DStreams.md)
