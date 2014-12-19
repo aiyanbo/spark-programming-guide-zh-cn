@@ -9,3 +9,4 @@
 * [DStream中的转换](transformations-on-DStreams.md)
 * [DStream的输出操作](output-operations-on-DStreams.md)
 * [缓存或持久化](caching-persistence.md)
+* [Checkpointing](checkpointing.md)
