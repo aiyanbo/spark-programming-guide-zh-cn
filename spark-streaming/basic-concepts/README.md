@@ -7,4 +7,4 @@
 * [离散流](discretized-streams.md)
 * [输入DStreams](input-DStreams.md)
 * [DStream中的转换](transformations-on-DStreams.md)
-* [DStream的输出操作](output-operations-DStreams.md)
+* [DStream的输出操作](output-operations-on-DStreams.md)
