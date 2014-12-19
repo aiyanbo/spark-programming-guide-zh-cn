@@ -10,3 +10,4 @@
 * [DStream的输出操作](output-operations-on-DStreams.md)
 * [缓存或持久化](caching-persistence.md)
 * [Checkpointing](checkpointing.md)
+* [部署应用程序](deploying-applications.md)

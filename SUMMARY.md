@@ -30,3 +30,4 @@
     * [DStream的输出操作](spark-streaming/basic-concepts/output-operations-on-DStreams.md)
     * [缓存或持久化](spark-streaming/basic-concepts/caching-persistence.md)
     * [Checkpointing](spark-streaming/basic-concepts/checkpointing.md)
+    * [部署应用程序](spark-streaming/basic-concepts/deploying-applications.md)
