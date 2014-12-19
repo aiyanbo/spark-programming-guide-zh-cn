@@ -11,3 +11,4 @@
 * [缓存或持久化](caching-persistence.md)
 * [Checkpointing](checkpointing.md)
 * [部署应用程序](deploying-applications.md)
+* [监控应用程序](monitoring-applications.md)
