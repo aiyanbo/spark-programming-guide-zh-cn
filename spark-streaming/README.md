@@ -28,3 +28,5 @@ Spark Streaming支持一个高层的抽象，叫做离散流(`discretized stream
   * [部署应用程序](basic-concepts/deploying-applications.md)
   * [监控应用程序](basic-concepts/monitoring-applications.md)
 * [性能调优](performance-tuning/README.md)
+  * [减少批数据的执行时间](performance-tuning/reducing-processing-time.md)
+  * [设置正确的批容量](performance-tuning/setting-right-batch-size.md)
