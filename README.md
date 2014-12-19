@@ -28,6 +28,7 @@ Spark 编程指南简体中文版
     * [离散流](spark-streaming/basic-concepts/discretized-streams.md)
     * [输入DStreams](spark-streaming/basic-concepts/input-DStreams.md)
     * [DStream中的转换](spark-streaming/basic-concepts/transformations-on-DStreams.md)
+    * [DStream的输出操作](spark-streaming/basic-concepts/output-operations-DStreams.md)
 
 ## Copyright
 
