@@ -13,7 +13,10 @@ Spark streaming是Spark核心API的一个扩展，它对实时流式数据的处
 Spark Streaming支持一个高层的抽象，叫做离散流(`discretized stream`)或者`DStream`，它代表连续的数据流。DStream既可以利用从Kafka, Flume和Kinesis等源获取的输入数据流创建，也可以
 在其他DStream的基础上通过高阶函数获得。在内部，DStream是由一系列RDDs组成。
 
-本指南指导用户开始利用DStream编写Spark Streaming程序。用户能够利用scala或者是java来编写Spark Streaming程序。
+本指南指导用户开始利用DStream编写Spark Streaming程序。用户能够利用scala、java或者Python来编写Spark Streaming程序。
+
+注意：Spark 1.2已经为Spark Streaming引入了Python API。它的所有DStream transformations和几乎所有的输出操作可以在scala和java接口中使用。然而，它只支持基本的源如文本文件或者套接字上
+的文本数据。诸如flume、kafka等外部的源的API会在将来引入。
 
 * [一个快速的例子](a-quick-example.md)
 * [基本概念](basic-concepts/README.md)
