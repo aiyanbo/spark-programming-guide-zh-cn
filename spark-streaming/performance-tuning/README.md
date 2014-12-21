@@ -7,3 +7,4 @@
 
 * [减少批数据的执行时间](reducing-processing-time.md)
 * [设置正确的批容量](setting-right-batch-size.md)
+* [内存调优](memory-tuning.md)

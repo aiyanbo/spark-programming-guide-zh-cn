@@ -35,3 +35,4 @@
   * [性能调优](spark-streaming/performance-tuning/README.md)
     * [减少批数据的执行时间](spark-streaming/performance-tuning/reducing-processing-time.md)
     * [设置正确的批容量](spark-streaming/performance-tuning/setting-right-batch-size.md)
+    * [内存调优](spark-streaming/performance-tuning/memory-tuning.md)
