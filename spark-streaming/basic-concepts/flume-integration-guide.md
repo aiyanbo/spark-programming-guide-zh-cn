@@ -33,7 +33,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 
 ### 配置Spark Streaming应用程序
 
-- 链接：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
+- 关联：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
 ```
  groupId = org.apache.spark
  artifactId = spark-streaming-flume_2.10
@@ -93,7 +93,7 @@ agent.sinks.avroSink.port = <chosen port on the machine>
 
 ### 配置Spark Streaming应用程序
 
-- 链接：在你的SBT或者Maven项目定义中，引入`spark-streaming-flume_2.10`组件
+- 关联：在你的SBT或者Maven项目定义中，引入`spark-streaming-flume_2.10`组件
 - 编程：在应用程序代码中，引入`FlumeUtils`创建输入DStream。
 
 ```

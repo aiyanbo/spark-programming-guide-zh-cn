@@ -5,7 +5,7 @@
 
 输入DStreams表示从数据源获取的原始数据流。Spark Streaming拥有两类数据源
 - 基本源（Basic sources）：这些源在StreamingContext API中直接可用。例如文件系统、套接字连接、Akka的actor等。
-- 高级源（Advanced sources）：这些源包括Kafka,Flume,Kinesis,Twitter等等。它们需要通过额外的类来使用。我们在[链接](linking.md)那一节讨论了类依赖。
+- 高级源（Advanced sources）：这些源包括Kafka,Flume,Kinesis,Twitter等等。它们需要通过额外的类来使用。我们在[关联](linking.md)那一节讨论了类依赖。
 
 需要注意的是，如果你想在一个流应用中并行地创建多个输入DStream来接收多个数据流，你能够创建多个输入流（这将在[性能调优](../performance-tuning/README.md)那一节介绍）
 。它将创建多个Receiver同时接收多个数据流。但是，`receiver`作为一个长期运行的任务运行在Spark worker或executor中。因此，它占有一个核，这个核是分配给Spark Streaming应用程序的所有
@@ -46,10 +46,10 @@ Spark Streaming将会监控`dataDirectory`目录，并且处理目录下生成�
 
 ## 高级源
 
-这类源需要非Spark库接口，并且它们中的部分还需要复杂的依赖（例如kafka和flume）。为了减少依赖的版本冲突问题，从这些源创建DStream的功能已经被移到了独立的库中，你能在[链接](linking.md)查看
+这类源需要非Spark库接口，并且它们中的部分还需要复杂的依赖（例如kafka和flume）。为了减少依赖的版本冲突问题，从这些源创建DStream的功能已经被移到了独立的库中，你能在[关联](linking.md)查看
 细节。例如，如果你想用来自推特的流数据创建DStream，你需要按照如下步骤操作：
 
-- 链接：添加`spark-streaming-twitter_2.10`到SBT或maven项目的依赖中
+- 关联：添加`spark-streaming-twitter_2.10`到SBT或maven项目的依赖中
 - 编写：导入`TwitterUtils`类，用`TwitterUtils.createStream`方法创建DStream,如下所示
 ```scala
 import org.apache.spark.streaming.twitter._

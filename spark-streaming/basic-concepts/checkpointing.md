@@ -55,6 +55,10 @@ context.awaitTermination()
 如果`checkpointDirectory`存在，上下文将会利用checkpoint数据重新创建。如果这个目录不存在，将会调用`functionToCreateContext`函数创建一个新的上下文，建立DStreams。
 请看[RecoverableNetworkWordCount](https://github.com/apache/spark/tree/master/examples/src/main/scala/org/apache/spark/examples/streaming/RecoverableNetworkWordCount.scala)例子。
 
-除了使用`getOrCreate`，开发者必须保证在故障发生时，driver处理自动重启。
+除了使用`getOrCreate`，开发者必须保证在故障发生时，driver处理自动重启。只能通过部署运行应用程序的基础设施来达到该目的。在部署章节将有更进一步的讨论。
+
+注意，RDD的checkpointing有存储成本。这会导致批数据（包含的RDD被checkpoint）的处理时间增加。因此，需要小心的设置批处理的时间间隔。在最小的批容量(包含1秒的数据)情况下，checkpoint每批数据会显著的减少
+操作的吞吐量。相反，checkpointing太少会导致谱系以及任务大小增大，这会产生有害的影响。因为有状态的transformation需要RDD checkpoint。默认的间隔时间是批间隔时间的倍数，最少10秒。它可以通过`dstream.checkpoint`
+来设置。典型的情况下，设置checkpoint间隔是DStream的滑动间隔的5-10大小是一个好的尝试。
 
 

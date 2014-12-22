@@ -1,4 +1,4 @@
-# 链接
+# 关联
 
 与Spark类似，Spark Streaming也可以利用maven仓库。编写你自己的Spark Streaming程序，你需要引入下面的依赖到你的SBT或者Maven项目中
 

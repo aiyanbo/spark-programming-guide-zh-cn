@@ -1,9 +1,17 @@
 # 部署应用程序
 
-Spark Streaming应用程序部署到集群中的方式和其他Spark程序是一样的。请参考[部署指南](../../deploying/README.md)了解更多信息。
+## Requirements
 
-需要注意的是，用到[高级源](input-DStreams.md)的应用程序在部署时需要将外部的组件(artifact)以及依赖的包打包进应用程序。例如，用到`TwitterUtils`的应用程序，需要将
-`spark-streaming-twitter_2.10`及其依赖的包打包进应用程序。
+运行一个Spark Streaming应用程序，有下面一些步骤
+
+- 有管理器的集群-这是任何Spark应用程序都需要的需求，详见[部署指南](../../deploying/README.md)
+- 将应用程序打为jar包-你必须编译你的应用程序为jar包。如果你用[spark-submit](../../deploying/submitting-applications.md)启动应用程序，你不需要将Spark和Spark Streaming打包进这个jar包。
+如果你的应用程序用到了高级源（如kafka，flume），你需要将它们关联的外部artifact以及它们的依赖打包进需要部署的应用程序jar包中。例如，一个应用程序用到了`TwitterUtils`，那么就需要将`spark-streaming-twitter_2.10`
+以及它的所有依赖打包到应用程序jar中。
+- 
+
+
+## 升级应用程序代码
 
 如果运行的Spark Streaming应用程序需要升级，有两种可能的方法
 

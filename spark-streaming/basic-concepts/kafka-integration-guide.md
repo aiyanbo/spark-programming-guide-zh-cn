@@ -3,7 +3,7 @@
 [Apache kafka](http://kafka.apache.org/)是一个分布式的发布-订阅消息系统，它可以分布式的、可分区的、可重复提交的方式读写日志数据。下面我们将具体介绍Spark Streaming怎样从kafka中
 接收数据。
 
-- 链接：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
+- 关联：在你的SBT或者Maven项目定义中，引用下面的组件到流应用程序中。
 
 ```
  groupId = org.apache.spark
