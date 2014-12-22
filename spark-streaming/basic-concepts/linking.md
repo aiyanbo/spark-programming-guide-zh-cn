@@ -6,7 +6,7 @@
 <dependency>
     <groupId>org.apache.spark</groupId>
     <artifactId>spark-streaming_2.10</artifactId>
-    <version>1.1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 为了从Kafka, Flume和Kinesis这些不在Spark核心API中提供的源获取数据，我们需要添加相关的模块`spark-streaming-xyz_2.10`到依赖中。例如，一些通用的组件如下表所示：
@@ -20,4 +20,4 @@ Twitter | spark-streaming-twitter_2.10
 ZeroMQ | spark-streaming-zeromq_2.10
 MQTT | spark-streaming-mqtt_2.10
 
-为了获取最新的列表，请访问[Apache repository](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.spark%22%20AND%20v%3A%221.1.1%22)
+为了获取最新的列表，请访问[Apache repository](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.apache.spark%22%20AND%20v%3A%221.2.0%22)

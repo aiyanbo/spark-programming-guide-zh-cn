@@ -81,6 +81,31 @@ val words = lines.flatMap(_.split(" "))
 
 完整的代码见例子[CustomReceiver.scala](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/streaming/CustomReceiver.scala)
 
+## Receiver可靠性
+
+基于Receiver的稳定性以及容错语义，Receiver分为两种类型
+
+- Reliable Receiver：可靠的源允许发送的数据被确认。一个可靠的receiver正确的应答一个可靠的源，数据已经收到并且被正确地复制到了Spark中（指正确完成复制）。实现这个receiver并
+仔细考虑源确认的语义。
+- Unreliable Receiver ：这些receivers不支持应答。即使对于一个可靠的源，开发者可能实现一个非可靠的receiver，这个receiver不会正确应答。
+
+为了实现可靠receiver，你必须使用`store(multiple-records)`去保存数据。保存的类型是阻塞访问，即所有给定的记录全部保存到Spark中后才返回。如果receiver的配置存储级别利用复制
+(默认情况是复制)，则会在复制结束之后返回。因此，它确保数据被可靠地存储，receiver恰当的应答给源。这保证在复制的过程中，没有数据造成的receiver失败。因为缓冲数据不会应答，从而
+可以从源中重新获取数据。
+
+一个不可控的receiver不必实现任何这种逻辑。它简单的从源中接收数据，然后用`store(single-record)`一次一个地保存它们。虽然它不能用`store(multiple-records)`获得可靠的保证，
+它有下面一些优势：
+
+- 系统注重分块，将数据分为适当大小的块。
+- 如果指定了速率的限制，系统注重控制接收速率。
+- 因为以上两点，不可靠receiver比可靠receiver更容易实现。
+
+下面是两类receiver的特征
+Receiver Type | Characteristics
+--- | ---
+Unreliable Receivers | 实现简单；系统更关心块的生成和速率的控制；没有容错的保证，在receiver失败时会丢失数据
+Reliable Receivers | 高容错保证，零数据丢失；块的生成和速率的控制需要手动实现；实现的复杂性依赖源的确认机制
+
 ## 实现和使用自定义的基于actor的receiver
 
 自定义的Akka actor也能够拥有接收数据。[ActorHelper](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.streaming.receiver.ActorHelper)trait可以

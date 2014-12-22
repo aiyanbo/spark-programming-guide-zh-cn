@@ -11,7 +11,7 @@ val ssc = new StreamingContext(conf, Seconds(1))
 ```
 
 `appName`表示你的应用程序显示在集群UI上的名字，`master`是一个[Spark、Mesos、YARN](https://spark.apache.org/docs/latest/submitting-applications.html#master-urls)集群URL
-或者一个特殊字符串“local”，它表示程序用本地模式运行。当程序运行在集群中时，你并不希望在程序中硬编码`master`，而是希望用`spark-submit`启动应用程序，并从`spark-submit`中得到
+或者一个特殊字符串“local[*]”，它表示程序用本地模式运行。当程序运行在集群中时，你并不希望在程序中硬编码`master`，而是希望用`spark-submit`启动应用程序，并从`spark-submit`中得到
 `master`的值。对于本地测试或者单元测试，你可以传递“local”字符串在同一个进程内运行Spark Streaming。需要注意的是，它在内部创建了一个SparkContext对象，你可以通过` ssc.sparkContext`
 访问这个SparkContext对象。
 
@@ -27,10 +27,10 @@ val ssc = new StreamingContext(sc, Seconds(1))
 
 当一个上下文（context）定义之后，你必须按照以下几步进行操作
 
-- 1 定义输入源；
-- 2 准备好流计算指令；
-- 3 利用`streamingContext.start()`方法接收和处理数据；
-- 4 处理过程将一直持续，直到`streamingContext.stop()`方法被调用。
+- 定义输入源；
+- 准备好流计算指令；
+- 利用`streamingContext.start()`方法接收和处理数据；
+- 处理过程将一直持续，直到`streamingContext.stop()`方法被调用。
 
 几点需要注意的地方：
 

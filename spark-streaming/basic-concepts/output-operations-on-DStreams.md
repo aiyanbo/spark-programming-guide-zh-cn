@@ -4,10 +4,10 @@
 
 Output Operation | Meaning
 --- | ---
-print() | 在DStream的每个批数据中打印前10条元素，这个操作在开发和调试中都非常有用
-saveAsObjectFiles(prefix, [suffix]) | 保存DStream的内容为一个序列化的文件`SequenceFile`。每一个批间隔的文件的文件名基于`prefix`和`suffix`生成。"prefix-TIME_IN_MS[.suffix]"
+print() | 在DStream的每个批数据中打印前10条元素，这个操作在开发和调试中都非常有用。在Python API中调用`pprint()`。
+saveAsObjectFiles(prefix, [suffix]) | 保存DStream的内容为一个序列化的文件`SequenceFile`。每一个批间隔的文件的文件名基于`prefix`和`suffix`生成。"prefix-TIME_IN_MS[.suffix]"，在Python API中不可用。
 saveAsTextFiles(prefix, [suffix]) | 保存DStream的内容为一个文本文件。每一个批间隔的文件的文件名基于`prefix`和`suffix`生成。"prefix-TIME_IN_MS[.suffix]"
-saveAsHadoopFiles(prefix, [suffix]) | 保存DStream的内容为一个hadoop文件。每一个批间隔的文件的文件名基于`prefix`和`suffix`生成。"prefix-TIME_IN_MS[.suffix]"
+saveAsHadoopFiles(prefix, [suffix]) | 保存DStream的内容为一个hadoop文件。每一个批间隔的文件的文件名基于`prefix`和`suffix`生成。"prefix-TIME_IN_MS[.suffix]"，在Python API中不可用。
 foreachRDD(func) | 在从流中生成的每个RDD上应用函数`func`的最通用的输出操作。这个函数应该推送每个RDD的数据到外部系统，例如保存RDD到文件或者通过网络写到数据库中。需要注意的是，`func`函数在驱动程序中执行，并且通常都有RDD action在里面推动RDD流的计算。
 
 ## 利用foreachRDD的设计模式
