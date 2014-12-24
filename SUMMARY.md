@@ -37,3 +37,5 @@
     * [设置正确的批容量](spark-streaming/performance-tuning/setting-right-batch-size.md)
     * [内存调优](spark-streaming/performance-tuning/memory-tuning.md)
   * [容错语义](spark-streaming/fault-tolerance-semantics/README.md)
+* [Spark SQL](spark-sql/README.md)
+  * [开始](spark-sql/getting-started.md)
