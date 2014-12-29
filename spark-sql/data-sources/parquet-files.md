@@ -32,6 +32,7 @@ Property Name | Default | Meaning
 --- | --- | ---
 spark.sql.parquet.binaryAsString | false | 一些其它的Parquet-producing系统，特别是Impala和其它版本的Spark SQL，当写出Parquet模式的时候，二进制数据和字符串之间无法区分。
 这个标记告诉Spark SQL将二进制数据解释为字符串来提供这些系统的兼容性。
+
 spark.sql.parquet.cacheMetadata | true | 打开parquet元数据的缓存，可以提高静态数据的查询速度
 spark.sql.parquet.compression.codec | gzip | 设置写parquet文件时的压缩算法，可以接受的值包括：uncompressed, snappy, gzip, lzo
 spark.sql.parquet.filterPushdown | false | 打开Parquet过滤器的pushdown优化。因为已知的Paruet错误，这个特征默认是关闭的。如果你的表不包含任何空的字符串或者二进制列，打开这个特征仍是安全的
