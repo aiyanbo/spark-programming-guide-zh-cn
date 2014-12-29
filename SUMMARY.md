@@ -39,3 +39,6 @@
   * [容错语义](spark-streaming/fault-tolerance-semantics/README.md)
 * [Spark SQL](spark-sql/README.md)
   * [开始](spark-sql/getting-started.md)
+  * [数据源](spark-sql/data-sources/README.md)
+    * [RDDs](spark-sql/data-sources/rdds.md)
+    * [parquet文件](spark-sql/data-sources/parquet-files.md)

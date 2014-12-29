@@ -7,3 +7,6 @@ SchemaRDDs由[行](http://spark.apache.org/docs/latest/api/scala/index.html#org.
 本章的所有例子都利用了Spark分布式系统中的样本数据，可以在`spark-shell`中运行它们。
 
 * [开始](getting-started.md)
+* [数据源](data-sources/README.md)
+  * [RDDs](data-sources/rdds.md)
+  * [parquet文件](data-sources/parquet-files.md)
