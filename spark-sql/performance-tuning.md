@@ -24,7 +24,7 @@ Property Name | Default | Meaning
 --- | --- | ---
 spark.sql.autoBroadcastJoinThreshold | 10485760(10m) | 配置一个表的最大大小(byte)。当执行join操作时，这个表将会广播到所有的worker节点。可以将值设置为-1来禁用广播。注意，目前的统计数据只支持Hive Metastore表，命令`ANALYZE TABLE <tableName> COMPUTE STATISTICS noscan`已经在这个表中运行。
 spark.sql.codegen | false | 当为true时，特定查询中的表达式求值的代码将会在运行时动态生成。对于一些拥有复杂表达式的查询，此选项可导致显著速度提升。然而，对于简单的查询，这个选项会减慢查询的执行
-spark.sql.shuffle.partitions | 200 | 配置为join或者聚合shuffle数据时分区的数量
+spark.sql.shuffle.partitions | 200 | 配置join或者聚合操作shuffle数据时分区的数量
 
 
 
