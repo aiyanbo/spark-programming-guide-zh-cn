@@ -26,7 +26,7 @@ teenagers.map(t => "Name: " + t(0)).collect().foreach(println)
 
 ## 配置
 
-可以在SQLContext上使用setConf方法配置Parquet或者在用SQL时运行`SET key=value`命令。
+可以在SQLContext上使用setConf方法配置Parquet或者在用SQL时运行`SET key=value`命令来配置Parquet。
 
 Property Name | Default | Meaning
 --- | --- | ---
