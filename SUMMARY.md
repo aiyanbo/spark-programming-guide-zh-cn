@@ -42,3 +42,5 @@
   * [数据源](spark-sql/data-sources/README.md)
     * [RDDs](spark-sql/data-sources/rdds.md)
     * [parquet文件](spark-sql/data-sources/parquet-files.md)
+    * [JSON数据集](spark-sql/data-sources/jSON-datasets.md)
+    * [Hive表](spark-sql/data-sources/hive-tables.md)

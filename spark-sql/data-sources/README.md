@@ -5,3 +5,5 @@ Spark SQL支持通过SchemaRDD接口操作各种数据源。一个SchemaRDD能�
 
 * [RDDs](rdds.md)
 * [parquet文件](parquet-files.md)
+* [JSON数据集](jSON-datasets.md)
+* [Hive表](hive-tables.md)
