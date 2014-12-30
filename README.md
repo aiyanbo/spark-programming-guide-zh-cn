@@ -46,6 +46,7 @@ Spark 编程指南简体中文版
     * [JSON数据集](spark-sql/data-sources/jSON-datasets.md)
     * [Hive表](spark-sql/data-sources/hive-tables.md)
   * [性能调优](spark-sql/performance-tuning.md)
+  * [其它SQL接口](spark-sql/other-sql-interfaces.md)
 
 ## Copyright
 

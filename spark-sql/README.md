@@ -13,3 +13,4 @@ SchemaRDDs由[行](http://spark.apache.org/docs/latest/api/scala/index.html#org.
   * [JSON数据集](data-sources/jSON-datasets.md)
   * [Hive表](data-sources/hive-tables.md)
 * [性能调优](performance-tuning.md)
+* [其它SQL接口](other-sql-interfaces.md)
