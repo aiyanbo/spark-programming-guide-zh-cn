@@ -2,7 +2,7 @@
 
 语言集成的相关查询是实验性的，现在暂时只支持scala。
 
-Spark SQL也支持领域特定语言编写查询。
+Spark SQL也支持用领域特定语言编写查询。
 
 ```scala
 // sc is an existing SparkContext.
