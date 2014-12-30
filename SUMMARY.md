@@ -46,3 +46,5 @@
     * [Hive表](spark-sql/data-sources/hive-tables.md)
   * [性能调优](spark-sql/performance-tuning.md)
   * [其它SQL接口](spark-sql/other-sql-interfaces.md)
+  * [编写语言集成(Language-Integrated)的相关查询](spark-sql/writing-language-integrated-relational-queries.md)
+  * [Spark SQL数据类型](spark-sql/spark-sql-dataType-reference.md)
