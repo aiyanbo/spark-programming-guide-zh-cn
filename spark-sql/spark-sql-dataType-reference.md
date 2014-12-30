@@ -18,7 +18,7 @@
         - ArrayType(elementType, containsNull)：代表由elementType类型元素组成的序列值。`containsNull`用来指明`ArrayType`中的值是否有null值
         - MapType(keyType, valueType, valueContainsNull)：表示包括一组键 - 值对的值。通过keyType表示key数据的类型，通过valueType表示value数据的类型。`valueContainsNull`用来指明`MapType`中的值是否有null值
         - StructType(fields):表示一个拥有`StructFields (fields)`序列结构的值
-            -StructField(name, dataType, nullable):代表`StructType`中的一个字段，字段的名字通过`name`指定，`dataType`指定field的数据类型，`nullable`表示字段的值是否有null值。
+            - StructField(name, dataType, nullable):代表`StructType`中的一个字段，字段的名字通过`name`指定，`dataType`指定field的数据类型，`nullable`表示字段的值是否有null值。
 
 Spark的所有数据类型都定义在包`org.apache.spark.sql`中，你可以通过`import  org.apache.spark.sql._`访问它们。
 
