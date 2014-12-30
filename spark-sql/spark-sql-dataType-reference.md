@@ -39,4 +39,4 @@ DateType | java.sql.Date | DateType
 ArrayType | scala.collection.Seq | ArrayType(elementType, [containsNull]) 注意containsNull默认为true
 MapType | scala.collection.Map | MapType(keyType, valueType, [valueContainsNull]) 注意valueContainsNull默认为true
 StructType | org.apache.spark.sql.Row | StructType(fields) ，注意fields是一个StructField序列，相同名字的两个StructField不被允许
-StructField | The value type in Scala of the data type of this field (For example, Int for a StructField with the data type IntegerType) | StructField(name, dataT
+StructField | The value type in Scala of the data type of this field (For example, Int for a StructField with the data type IntegerType) | StructField(name, dataType, nullable)
