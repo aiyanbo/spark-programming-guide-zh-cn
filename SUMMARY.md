@@ -50,4 +50,4 @@
   * [Spark SQL数据类型](spark-sql/spark-sql-dataType-reference.md)
 * [GraphX编程指南](graphx-programming-guide/README.md)
   * [开始](graphx-programming-guide/getting-started.md)
-  * [属性图](graphx-programming-guide/property_graph.md)
+  * [属性图](graphx-programming-guide/property-graph.md)
