@@ -52,6 +52,7 @@ Spark 编程指南简体中文版
 * [GraphX编程指南](graphx-programming-guide/README.md)
   * [开始](graphx-programming-guide/getting-started.md)
   * [属性图](graphx-programming-guide/property-graph.md)
+  * [图操作符](graphx-programming-guide/graph-operators.md)
 
 ## Copyright
 

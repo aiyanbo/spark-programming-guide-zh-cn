@@ -1,4 +1,4 @@
-# 图操作
+# 图操作符
 
 正如RDDs有基本的操作map, filter和reduceByKey一样，属性图也有基本的集合操作，这些操作采用用户自定义的函数并产生包含转换特征和结构的新图。定义在[Graph](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.graphx.Graph)中的
 核心操作是经过优化的实现。表示为核心操作的组合的便捷操作定义在[GraphOps](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.graphx.GraphOps)中。然而，
