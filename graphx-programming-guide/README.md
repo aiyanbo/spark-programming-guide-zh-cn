@@ -23,3 +23,4 @@ GraphX项目的目的就是将`graph-parallel`和`data-parallel`统一到一个�
 * [开始](getting-started.md)
 * [属性图](property-graph.md)
 * [图操作符](graph-operators.md)
+* [Pregel API](pregel-api.md)
