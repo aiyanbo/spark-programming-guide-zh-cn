@@ -55,3 +55,5 @@
   * [Pregel API](graphx-programming-guide/pregel-api.md)
   * [图构造者](graphx-programming-guide/graph-builders.md)
   * [顶点和边RDDs](graphx-programming-guide/vertex-and-edge-rdds.md)
+  * [图算法](graphx-programming-guide/graph-algorithms.md)
+  * [例子](graphx-programming-guide/examples.md)

@@ -26,3 +26,5 @@ GraphX项目的目的就是将`graph-parallel`和`data-parallel`统一到一个�
 * [Pregel API](pregel-api.md)
 * [图构造者](graph-builders.md)
 * [顶点和边RDDs](vertex-and-edge-rdds.md)
+* [图算法](graph-algorithms.md)
+* [例子](examples.md)
