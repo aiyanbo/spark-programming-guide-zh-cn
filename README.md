@@ -55,6 +55,7 @@ Spark 编程指南简体中文版
   * [图操作符](graphx-programming-guide/graph-operators.md)
   * [Pregel API](graphx-programming-guide/pregel-api.md)
   * [图构造者](graphx-programming-guide/graph-builders.md)
+  * [顶点和边RDDs](graphx-programming-guide/vertex-and-edge-rdds.md)
 
 ## Copyright
 
