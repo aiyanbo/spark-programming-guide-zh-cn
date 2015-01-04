@@ -57,3 +57,5 @@
   * [顶点和边RDDs](graphx-programming-guide/vertex-and-edge-rdds.md)
   * [图算法](graphx-programming-guide/graph-algorithms.md)
   * [例子](graphx-programming-guide/examples.md)
+* [部署](deploying/running-spark-on-yarn.md)
+  * [在yarn上运行Spark](deploying/running-spark-on-yarn.md)
