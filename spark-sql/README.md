@@ -7,3 +7,12 @@ SchemaRDDs由[行](http://spark.apache.org/docs/latest/api/scala/index.html#org.
 本章的所有例子都利用了Spark分布式系统中的样本数据，可以在`spark-shell`中运行它们。
 
 * [开始](getting-started.md)
+* [数据源](data-sources/README.md)
+  * [RDDs](data-sources/rdds.md)
+  * [parquet文件](data-sources/parquet-files.md)
+  * [JSON数据集](data-sources/jSON-datasets.md)
+  * [Hive表](data-sources/hive-tables.md)
+* [性能调优](performance-tuning.md)
+* [其它SQL接口](other-sql-interfaces.md)
+* [编写语言集成(Language-Integrated)的相关查询](writing-language-integrated-relational-queries.md)
+* [Spark SQL数据类型](spark-sql-dataType-reference.md)
