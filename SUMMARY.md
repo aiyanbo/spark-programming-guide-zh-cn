@@ -61,3 +61,5 @@
   * [提交应用程序](deploying/submitting-applications.md)
   * [独立运行Spark](deploying/spark-standalone-mode.md)
   * [在yarn上运行Spark](deploying/running-spark-on-yarn.md)
+* [更多文档](more/spark-configuration.md)
+  * [Spark配置](more/spark-configuration.md)
