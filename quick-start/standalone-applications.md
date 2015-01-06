@@ -36,7 +36,7 @@ version := "1.0"
 
 scalaVersion := "2.10.4"
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % "1.1.0"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "1.2.0"
 ```
 
 要让 sbt 正确工作，我们需要把 `SimpleApp.scala` 和 `simple.sbt` 按照标准的文件目录结构布局。上面的做好之后，我们可以把程序的代码创建成一个 JAR 包。然后使用 `spark-submit` 来运行我们的程序。
