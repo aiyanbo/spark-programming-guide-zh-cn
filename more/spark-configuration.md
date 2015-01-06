@@ -149,4 +149,58 @@ spark.broadcast.port | (random) | driver的HTTP广播服务器监听的端口
 spark.replClassServer.port | (random) | driver的HTTP类服务器监听的端口
 spark.blockManager.port | (random) | 块管理器监听的端口。这些同时存在于driver和executors
 spark.executor.port | (random) | executor监听的端口。用于与driver通信
-spark.port.maxRetries | 16 |
+spark.port.maxRetries | 16 | 当绑定到一个端口，在放弃前重试的最大次数
+spark.akka.frameSize | 10 | 在"control plane"通信中允许的最大消息大小。如果你的任务需要发送大的结果到driver中，调大这个值
+spark.akka.threads | 4 | 通信的actor线程数。当driver有很多CPU核时，调大它是有用的
+spark.akka.timeout | 100 | Spark节点之间的通信超时。单位是s
+spark.akka.heartbeat.pauses | 6000 | This is set to a larger value to disable failure detector that comes inbuilt akka. It can be enabled again, if you plan to use this feature (Not recommended). Acceptable heart beat pause in seconds for akka. This can be used to control sensitivity to gc pauses. Tune this in combination of `spark.akka.heartbeat.interval` and `spark.akka.failure-detector.threshold` if you need to.
+spark.akka.failure-detector.threshold | 300.0 | This is set to a larger value to disable failure detector that comes inbuilt akka. It can be enabled again, if you plan to use this feature (Not recommended). This maps to akka's `akka.remote.transport-failure-detector.threshold`. Tune this in combination of `spark.akka.heartbeat.pauses` and `spark.akka.heartbeat.interval` if you need to.
+spark.akka.heartbeat.interval | 1000 | This is set to a larger value to disable failure detector that comes inbuilt akka. It can be enabled again, if you plan to use this feature (Not recommended). A larger interval value in seconds reduces network overhead and a smaller value ( ~ 1 s) might be more informative for akka's failure detector. Tune this in combination of `spark.akka.heartbeat.pauses` and `spark.akka.failure-detector.threshold` if you need to. Only positive use case for using failure detector can be, a sensistive failure detector can help evict rogue executors really quick. However this is usually not the case as gc pauses and network lags are expected in a real Spark cluster. Apart from that enabling this leads to a lot of exchanges of heart beats between nodes leading to flooding the network with those.
+
+#### Security
+
+Property Name | Default | Meaning
+--- | --- | ---
+spark.authenticate | false | 是否Spark验证其内部连接。如果不是运行在YARN上，请看`spark.authenticate.secret`
+spark.authenticate.secret | None | 设置Spark两个组件之间的密匙验证。如果不是运行在YARN上，但是需要验证，这个选项必须设置
+spark.core.connection.auth.wait.timeout | 30 | 连接时等待验证的实际。单位为秒
+spark.core.connection.ack.wait.timeout | 60 | 连接等待回答的时间。单位为秒。为了避免不希望的超时，你可以设置更大的值
+spark.ui.filters | None | 应用到Spark web UI的用于过滤类名的逗号分隔的列表。过滤器必须是标准的[javax servlet Filter](http://docs.oracle.com/javaee/6/api/javax/servlet/Filter.html)。通过设置java系统属性也可以指定每个过滤器的参数。`spark.<class name of filter>.params='param1=value1,param2=value2'`。例如`-Dspark.ui.filters=com.test.filter1`、`-Dspark.com.test.filter1.params='param1=foo,param2=testing'`
+spark.acls.enable | false | 是否开启Spark acls。如果开启了，它检查用户是否有权限去查看或修改job。 Note this requires the user to be known, so if the user comes across as null no checks are done。UI利用使用过滤器验证和设置用户
+spark.ui.view.acls | empty | 逗号分隔的用户列表，列表中的用户有查看(view)Spark web UI的权限。默认情况下，只有启动Spark job的用户有查看权限
+spark.modify.acls | empty | 逗号分隔的用户列表，列表中的用户有修改Spark job的权限。默认情况下，只有启动Spark job的用户有修改权限
+spark.admin.acls | empty | 逗号分隔的用户或者管理员列表，列表中的用户或管理员有查看和修改所有Spark job的权限。如果你运行在一个共享集群，有一组管理员或开发者帮助debug，这个选项有用
+
+#### Spark Streaming
+
+Property Name | Default | Meaning
+--- | --- | ---
+spark.streaming.blockInterval | 200 | 在这个时间间隔（ms）内，通过Spark Streaming receivers接收的数据在保存到Spark之前，chunk为数据块。推荐的最小值为50ms
+spark.streaming.receiver.maxRate | infinite | 每秒钟每个receiver将接收的数据的最大记录数。有效的情况下，每个流将消耗至少这个数目的记录。设置这个配置为0或者-1将会不作限制
+spark.streaming.receiver.writeAheadLogs.enable | false | Enable write ahead logs for receivers. All the input data received through receivers will be saved to write ahead logs that will allow it to be recovered after driver failures
+spark.streaming.unpersist | true | 强制通过Spark Streaming生成并持久化的RDD自动从Spark内存中非持久化。通过Spark Streaming接收的原始输入数据也将清除。设置这个属性为false允许流应用程序访问原始数据和持久化RDD，因为它们没有被自动清除。但是它会造成更高的内存花费
+
+## 环境变量
+
+通过环境变量配置确定的Spark设置。环境变量从Spark安装目录下的`conf/spark-env.sh`脚本读取（或者windows的`conf/spark-env.cmd`）。在独立的或者Mesos模式下，这个文件可以给机器
+确定的信息，如主机名。当运行本地应用程序或者提交脚本时，它也起作用。
+
+注意，当Spark安装时，`conf/spark-env.sh`默认是不存在的。你可以复制`conf/spark-env.sh.template`创建它。
+
+可以在`spark-env.sh`中设置如下变量：
+
+Environment Variable | Meaning
+--- | ---
+JAVA_HOME | java安装的路径
+PYSPARK_PYTHON | PySpark用到的Python二进制执行文件路径
+SPARK_LOCAL_IP | 机器绑定的IP地址
+SPARK_PUBLIC_DNS | 你Spark应用程序通知给其他机器的主机名
+
+除了以上这些，Spark [standalone cluster scripts](http://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts)也可以设置一些选项。例如
+每台机器使用的核数以及最大内存。
+
+因为`spark-env.sh`是shell脚本，其中的一些可以以编程方式设置。例如，你可以通过特定的网络接口计算`SPARK_LOCAL_IP`。
+
+## 配置Logging
+
+Spark用[log4j](http://logging.apache.org/log4j/) logging。你可以通过在conf目录下添加`log4j.properties`文件来配置。一种方法是复制`log4j.properties.template`文件。
