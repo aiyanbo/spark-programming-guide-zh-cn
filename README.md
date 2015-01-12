@@ -17,6 +17,7 @@ Spark 编程指南简体中文版
       * [使用键值对](programming-guide/rdds/working-with-key-value-pairs.md)
       * [Transformations](programming-guide/rdds/transformations.md)
       * [Actions](programming-guide/rdds/actions.md)
+<<<<<<< HEAD
     * [RDD持久化](programming-guide/rdds/rdd-persistences.md)
   * [共享变量](programming-guide/shared-variables.md)
   * [从这里开始](programming-guide/from-here.md)
@@ -64,6 +65,9 @@ Spark 编程指南简体中文版
   * [在yarn上运行Spark](deploying/running-spark-on-yarn.md)
 * [更多文档](more/spark-configuration.md)
   * [Spark配置](more/spark-configuration.md)
+=======
+    * [RDD 持久化](programming-guide/rdds/rdd_persistence.md)
+>>>>>>> master
 
 ## Copyright
 
