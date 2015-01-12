@@ -9,3 +9,5 @@ Spark 的第二个抽象是*共享变量(shared variables)*，共享变量能被
 * [引入 Spark](linking-with-spark.md)
 * [初始化 Spark](initializing-spark.md)
 * [Spark RDDs](rdds/README.md)
+* [共享变量](shared-variables.md)
+* [从这里开始](from-here.md)
